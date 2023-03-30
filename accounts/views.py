@@ -119,7 +119,7 @@ def login(request):
                 pass    
             auth.login(request,user)
             messages.success(request,'You are now logged in')
-            url = requests.META.get('HTTP_REFERER')
+            url = request.META.get('HTTP_REFERER')
             try:
                 query = requests.utils.urlparse(url).query      
                       
